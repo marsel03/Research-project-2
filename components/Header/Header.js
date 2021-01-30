@@ -62,7 +62,7 @@ export default function Header(props) {
     [classes.fixed]: fixed
   });
   const brandComponent = (
-    <Link href="/components" as="/components">
+    <Link href="/login" as="/login">
       <Button className={classes.title}>{brand}</Button>
     </Link>
   );

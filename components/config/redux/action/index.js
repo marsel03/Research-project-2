@@ -1,6 +1,3 @@
-import { useRadioGroup } from '@material-ui/core';
-import { keys } from '@material-ui/core/styles/createBreakpoints';
-import { database } from '../../../../../Project/src/config/firebase';
 import firebase from '../../firebase';
 
 export const actionUserName = () => (dispatch) => {
