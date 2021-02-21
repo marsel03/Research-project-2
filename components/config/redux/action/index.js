@@ -11,8 +11,8 @@ export const registerUserAPI = (data) => (dispatch) => {
     dispatch({type: 'CHANGE_LOADING', value: true})
         firebase.auth().createUserWithEmailAndPassword(data.email, data.password)
         .then(res => {
-            const userId = firebase.auth().currentUser.uid
-            firebase.database().ref('users/' + userId).push({
+            // const userId = firebase.auth().currentUser.uid
+            firebase.database().ref('users').push({
                 username: data.name,
                 email: data.email,
                 alamat: data.alamat,
@@ -56,7 +56,8 @@ export const loginUserAPI = (data) => (dispatch) => {
         .catch(function(error) {
             const errorCode = error.code;
             const errorMessage = error.message;
-            console.log(errorCode, errorMessage)
+            console.log(errorMessage)
+            alert(errorCode, errorMessage)
             dispatch({type: 'CHANGE_LOADING', value: false})
             dispatch({type: 'CHANGE_ISLOGIN', value: false})
             reject(false)
