@@ -94,27 +94,34 @@ const Cart = (props) => {
             </GridContainer>
             </div>
         </Parallax>
-        <Layout>
-            {
-                totalAmount === 0
-                    ? <h2>Your Cart is Empty</h2>
-                    : cartItems.map(item => 
-                        <CartItem
-                            key={item.productId}
-                            id={item.productId}
-                            name={item.productName}
-                            price={item.productPrice}
-                            quantity={item.quantity}
-                            sum={item.sum}
-                            image={item.productImage}
-                        />
-                    )
-            }
-            {
-                totalAmount !== 0 &&
-                <h2>Grand Total: <CurrencyFormat value={totalAmount} displayType={'text'} thousandSeparator={true} prefix={'Rp. '} /> </h2>
-            }
-        </Layout>
+
+        <div className={classes.section}>
+            <div className={classes.container}>
+            <div className={classes.space50} />
+                <Layout>
+                    {
+                        totalAmount === 0
+                            ? <h2>Your Cart is Empty</h2>
+                            : cartItems.map(item => 
+                                <CartItem
+                                    key={item.productId}
+                                    id={item.productId}
+                                    name={item.productName}
+                                    price={item.productPrice}
+                                    quantity={item.quantity}
+                                    sum={item.sum}
+                                    image={item.productImage}
+                                />
+                            )
+                    }
+                    {
+                        totalAmount !== 0 &&
+                        <h2>Grand Total: <CurrencyFormat value={totalAmount} displayType={'text'} thousandSeparator={true} prefix={'Rp. '} /> </h2>
+                    }
+                </Layout>
+
+            </div>
+        </div> 
         <Footer />
         </div>
     )

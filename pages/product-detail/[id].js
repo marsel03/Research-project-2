@@ -60,9 +60,19 @@ const ProductDetail = props => {
                                 <GridContainer>
                                     <td>
                                         <GridItem xs={2} sm={10}>
-                                            <img width="375" height="275" src={`../${selectedProduct.productImage}`} />
+                                            <img width="300" height="275" src={`../${selectedProduct.productImage}`} />
                                         </GridItem>
-                                    </td><br/>
+                                    </td>
+                                            <td>
+                                                <GridItem>
+                                                    <img width="150" height="125" src={`../${selectedProduct.productImage}`} />
+                                                </GridItem><br/>
+                                                <td>
+                                                    <GridItem>
+                                                        <img width="150" height="125" src={`../${selectedProduct.productImage}`} />
+                                                    </GridItem>
+                                                </td>
+                                            </td>
                                     <td>
                                         <GridItem xs={2} sm={10} className={classes.marginLeft}>    
                                             <h1>{selectedProduct.productName}</h1>
